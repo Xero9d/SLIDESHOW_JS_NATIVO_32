@@ -1,2 +1,1 @@
-# SLIDESHOW_JS_NATIVO_32
- Carrusel Imagenes
+Cambia lo de la propiedad block a clases
