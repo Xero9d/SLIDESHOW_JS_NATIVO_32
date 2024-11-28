@@ -97,16 +97,17 @@ function showSlide(slideNumber) {
 // Le pasamos el parámetro con el valor 1 para que vaya añadiendolé uno a la función nextPrevSlide y por ende las slides vayan avanzando
 
 function startAutoSlide() {
-    autoSlide = setInterval(function(){nextPrevSlide(1); }, 2000);
+    autoSlide = setInterval(function(){nextPrevSlide(1); }, 4000);
 }
 
 function stopAutoSlide() {
     clearInterval(autoSlide);
 }
 
-arrDots.forEach(addEventListener("click", function(){
-    stopAutoSlide();
-    currentDotSlide();
-    startAutoSlide();
-}));
-
+arrDots.forEach((dot, index) => {
+    dot.addEventListener("click", function () {
+        stopAutoSlide();
+        currentDotSlide(index); // Pasamos el índice del punto actual
+        startAutoSlide();
+    });
+}); 
